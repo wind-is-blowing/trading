@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//OTD Mapper 3.0//EN" "https://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.qfl.trading.mapper.DataMapper">
+
+    <select id="getData" resultType="Data" parameterType="String" databaseId="mysql">
+        select u_id,sku_id,price,date,cate,label from #{table1},#{table2},#{table3},#{table4}
+        where #{table1.sku_id}=#{table2.sku_id} and #{table2.u_id}=#{table3.u_id} and #{table3.o_id}=#{table4.o_id}
+    </select>
+</mapper>
